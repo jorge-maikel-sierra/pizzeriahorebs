@@ -123,7 +123,7 @@ class WooCommerceBlocksIntegration {
           return [
             'optin' => [
               'description' => __('Subscribe to marketing opt-in.', 'mailpoet'),
-              'type' => 'boolean',
+              'type' => ['boolean', 'null'],
             ],
           ];
         },

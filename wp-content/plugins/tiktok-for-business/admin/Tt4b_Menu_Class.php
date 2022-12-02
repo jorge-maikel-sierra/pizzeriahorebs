@@ -209,7 +209,7 @@ class Tt4b_Menu_Class {
 			}
 		}
 
-		$obj           = [
+		$obj = [
 			'external_business_id' => $external_business_id,
 			'business_platform'    => $business_platform,
 			'locale'               => $locale,
@@ -239,7 +239,9 @@ class Tt4b_Menu_Class {
 			'state'                => $store_state,
 			'zip_code'             => $store_postcode,
 		];
+
 		$external_data = base64_encode( json_encode( $obj, JSON_UNESCAPED_SLASHES ) );
+		update_option( 'tt4b_external_data', $external_data );
 		// log the external_data for ease of debugging.
 		$logger->log( __METHOD__, 'external_data: ' . $external_data );
 

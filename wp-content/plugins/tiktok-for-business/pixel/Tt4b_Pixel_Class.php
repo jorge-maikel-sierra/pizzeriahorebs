@@ -8,6 +8,8 @@
  * @package TikTok
  */
 class Tt4b_Pixel_Class {
+	// TTCLID Cookie name
+	const TTCLID_COOKIE = 'tiktok_ttclid';
 
 
 	/**
@@ -73,6 +75,8 @@ class Tt4b_Pixel_Class {
 				'email' => $hashed_email,
 			],
 		];
+
+		$context = self::get_ttclid( $context ); // add ttclid if available
 
 		$params = [
 			'pixel_code' => $fields['pixel_code'],
@@ -144,7 +148,10 @@ class Tt4b_Pixel_Class {
 				'email' => $hashed_email,
 			],
 		];
-		$params  = [
+
+		$context = self::get_ttclid( $context ); // add ttclid if available
+
+		$params = [
 			'pixel_code' => $fields['pixel_code'],
 			'event'      => $event,
 			'timestamp'  => $timestamp,
@@ -227,6 +234,8 @@ class Tt4b_Pixel_Class {
 			],
 		];
 
+		$context = self::get_ttclid( $context ); // add ttclid if available
+
 		$params = [
 			'pixel_code' => $fields['pixel_code'],
 			'event'      => $event,
@@ -307,6 +316,8 @@ class Tt4b_Pixel_Class {
 				'email' => $hashed_email,
 			],
 		];
+
+		$context = self::get_ttclid( $context ); // add ttclid if available
 
 		$params = [
 			'pixel_code' => $fields['pixel_code'],
@@ -403,5 +414,35 @@ class Tt4b_Pixel_Class {
 		}
 
 		return $option;
+	}
+
+
+
+	/**
+	 *  Grab ttclid from URL and set cookie for 30 days
+	 */
+	public static function set_ttclid() {
+		if ( isset( $_GET['ttclid'] ) ) {
+			setcookie( self::TTCLID_COOKIE, sanitize_text_field( $_GET['ttclid'] ), time() + 30 * 86400, '/' );
+		}
+	}
+
+
+	/**
+	 *  Add ttclid if it is available
+	 *
+	 * @param string $context       The pixel context
+	 *
+	 * @return context|object
+	 */
+	protected static function get_ttclid( $context ) {
+		if ( isset( $_COOKIE[ self::TTCLID_COOKIE ] ) ) {
+			// TTCLID cookie is set, append it to the $context
+			$context['ad'] = [
+				'callback' => sanitize_text_field( $_COOKIE[ self::TTCLID_COOKIE ] ),
+			];
+		}
+
+		return $context;
 	}
 }

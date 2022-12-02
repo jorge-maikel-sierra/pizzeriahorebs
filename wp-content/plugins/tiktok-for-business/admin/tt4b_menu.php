@@ -11,6 +11,9 @@ require_once 'Tt4b_Menu_Class.php';
 add_action( 'admin_menu', [ 'tt4b_menu_class', 'tt4b_admin_menu' ] );
 add_action( 'admin_head', [ 'tt4b_menu_class', 'tt4b_store_access_token' ] );
 add_action( 'save_post', 'tt4b_product_sync', 10, 3 );
+add_action( 'delete_post', 'tt4b_product_delete', 10, 2 );
+add_action( 'trashed_post', 'tt4b_product_trashed' );
+add_action( 'untrashed_post', 'tt4b_product_untrashed' );
 
 /**
  * Updates on product change
@@ -21,7 +24,7 @@ add_action( 'save_post', 'tt4b_product_sync', 10, 3 );
  *
  * @return void
  */
-function tt4b_product_sync( $post_id, $post, $update ) {
+function tt4b_product_sync( $post_id, $post, $update = null ) {
 	if ( 'product' !== $post->post_type ) {
 		return;
 	}
@@ -76,6 +79,12 @@ function tt4b_product_sync( $post_id, $post, $update ) {
 	if ( '0' === $sale_price || '' === $sale_price ) {
 		$sale_price = $price;
 	}
+	// Get product gallery images - max 10
+	$gallery_image_ids  = array_slice( $product->get_gallery_image_ids(), 0, 10, true );
+	$gallery_image_urls = [];
+	foreach ( $gallery_image_ids as $gallery_image_id ) {
+		$gallery_image_urls[] = wp_get_attachment_image_url( $gallery_image_id, 'full' );
+	}
 
 	// if any of the values are empty, the whole request will fail, so skip the product.
 	$missing_fields = [];
@@ -121,6 +130,11 @@ function tt4b_product_sync( $post_id, $post, $update ) {
 		],
 	];
 
+	// add additional product images if available
+	if ( count( $gallery_image_urls ) > 0 ) {
+		$dpa_product['additional_image_link'] = $gallery_image_urls;
+	}
+
 	// post to catalog manager.
 	$mapi                    = new Tt4b_Mapi_Class( $logger );
 	$dpa_products            = [ $dpa_product ];
@@ -130,4 +144,80 @@ function tt4b_product_sync( $post_id, $post, $update ) {
 		'dpa_products' => $dpa_products,
 	];
 	$mapi->mapi_post( 'catalog/product/upload/', $access_token, $dpa_product_information );
+}
+
+
+/**
+ * Untrash a product
+ *
+ * @param string $post_id The product_id.
+ *
+ * @return void
+ */
+function tt4b_product_untrashed( $post_id ) {
+	$post = get_post( $post_id );
+	tt4b_product_sync( $post_id, $post );
+}
+
+
+/**
+ * Trash a product
+ *
+ * @param string $post_id The product_id.
+ *
+ * @return void
+ */
+function tt4b_product_trashed( $post_id ) {
+	$post = get_post( $post_id );
+	tt4b_product_delete( $post_id, $post );
+}
+
+
+/**
+ * Delete a product
+ *
+ * @param string $post_id The product_id.
+ * @param string $post    The post.
+ *
+ * @return void
+ */
+function tt4b_product_delete( $post_id, $post ) {
+	if ( 'product' !== $post->post_type ) {
+		return;
+	}
+	$product = wc_get_product( $post_id );
+	if ( is_null( $product ) ) {
+		return;
+	}
+	$logger = new Logger( wc_get_logger() );
+
+	$access_token = get_option( 'tt4b_access_token' );
+	$catalog_id   = get_option( 'tt4b_catalog_id' );
+	$bc_id        = get_option( 'tt4b_bc_id' );
+	if ( false === $access_token ) {
+		$logger->log( __METHOD__, 'missing access token for tt4b_product_sync' );
+		return;
+	}
+	if ( '' === $catalog_id ) {
+		$logger->log( __METHOD__, 'missing catalog_id for tt4b_product_sync' );
+		return;
+	}
+	if ( '' === $bc_id ) {
+		$logger->log( __METHOD__, 'missing bc_id for tt4b_product_sync' );
+		return;
+	}
+
+	$sku_id = (string) $product->get_sku();
+	if ( '' === $sku_id ) {
+		$sku_id = (string) $product->get_id();
+	}
+
+	// post to catalog manager.
+	$mapi                    = new Tt4b_Mapi_Class( $logger );
+	$dpa_product_information = [
+		'bc_id'      => $bc_id,
+		'catalog_id' => $catalog_id,
+		'sku_ids'    => [ $sku_id ],
+	];
+	$mapi->mapi_post( 'catalog/product/delete/', $access_token, $dpa_product_information );
 }

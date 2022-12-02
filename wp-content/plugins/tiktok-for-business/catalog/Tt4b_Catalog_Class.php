@@ -270,6 +270,12 @@ class Tt4b_Catalog_Class {
 			if ( '0' === $sale_price || '' === $sale_price ) {
 				$sale_price = $price;
 			}
+			// Get product gallery images - max 10
+			$gallery_image_ids  = array_slice( $product->get_gallery_image_ids(), 0, 10, true );
+			$gallery_image_urls = [];
+			foreach ( $gallery_image_ids as $gallery_image_id ) {
+				$gallery_image_urls[] = wp_get_attachment_image_url( $gallery_image_id, 'full' );
+			}
 
 			// if any of the values are empty, the whole request will fail, so skip the product.
 			$missing_fields = [];
@@ -296,7 +302,7 @@ class Tt4b_Catalog_Class {
 				continue;
 			}
 
-			$dpa_product    = [
+			$dpa_product = [
 				'sku_id'        => $sku_id,
 				'item_group_id' => $sku_id,
 				'title'         => $title,
@@ -315,6 +321,12 @@ class Tt4b_Catalog_Class {
 					'link' => $link,
 				],
 			];
+
+			// add additional product images if available
+			if ( count( $gallery_image_urls ) > 0 ) {
+				$dpa_product['additional_image_link'] = $gallery_image_urls;
+			}
+
 			$dpa_products[] = $dpa_product;
 		}
 		$count = count( $dpa_products );

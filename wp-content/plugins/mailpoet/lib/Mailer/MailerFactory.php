@@ -152,7 +152,7 @@ class MailerFactory {
   }
 
   private function getReturnPathAddress(array $sender): ?string {
-    $bounceAddress = $this->settings->get('bounce.address');
+    $bounceAddress = (string)$this->settings->get('bounce.address');
     return $this->wp->isEmail($bounceAddress) ? $bounceAddress : $sender['from_email'];
   }
 

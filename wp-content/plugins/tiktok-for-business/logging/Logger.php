@@ -68,6 +68,16 @@ class Logger {
 		$method = isset( $args['method'] ) ? $args['method'] : 'POST';
 		$data   = isset( $args['body'] ) ? $args['body'] : '--- EMPTY STRING ---';
 		self::log( $method, "{$url}\n\n{$data}\n", $level );
+
+		if ( 'POST' === $method && false === is_admin() ) {
+			// Only want to console log pixel fire
+			?>
+			<script>
+				console.log("TikTok pixel fire.");
+				console.log(<?php echo json_encode( $data ); ?>);
+			</script>
+			<?php
+		}
 	}
 
 	/**

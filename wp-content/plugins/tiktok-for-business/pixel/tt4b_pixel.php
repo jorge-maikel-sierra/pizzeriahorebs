@@ -13,3 +13,4 @@ add_action( 'woocommerce_after_single_product', [ 'Tt4b_Pixel_Class', 'inject_vi
 add_action( 'woocommerce_payment_complete', [ 'Tt4b_Pixel_Class', 'inject_purchase_event' ] );
 add_action( 'woocommerce_thankyou', [ 'Tt4b_Pixel_Class', 'inject_purchase_event' ] );
 add_action( 'woocommerce_before_checkout_form', [ 'Tt4b_Pixel_Class', 'inject_start_checkout' ] );
+add_action( 'init', [ 'Tt4b_Pixel_Class', 'set_ttclid' ] );

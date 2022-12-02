@@ -2,8 +2,8 @@
 Contributors: tiktokforbusiness, woocommerce, automattic
 Tags: tiktok
 Requires at least: 5.7.0
-Tested up to: 5.8.2
-Stable tag: 1.0.11
+Tested up to: 6.1
+Stable tag: 1.0.12
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -118,6 +118,13 @@ In order to submit a customer support ticket, you must have a TikTok for Busines
 5. Fill out the required fields in the support ticket
 
 == Changelog ==
+2022-11-29 - version 1.0.12
+* Update - TTCLID enabled for improved pixel attribution
+* Update - Support for up to 10 product images 
+* Tweak - Product sync improvement to support trash, untrash and deleted products
+* Fix - Fix for disconnecting and uninstall logic 
+* Update - Support for Events API debugging 
+
 2022-11-08 - version 1.0.11
 * Update - Product sync improvement for inventory and orders
 * Update - Onboarding improvement to improve catalog syncing functionality

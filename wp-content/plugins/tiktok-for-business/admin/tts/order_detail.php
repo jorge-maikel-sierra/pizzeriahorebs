@@ -43,6 +43,9 @@ class OrderDetail {
 		}
 
 		$screen = get_current_screen();
+		if ( is_null( $screen ) ) {
+			return false;
+		}
 
 		// not order detail page
 		if (

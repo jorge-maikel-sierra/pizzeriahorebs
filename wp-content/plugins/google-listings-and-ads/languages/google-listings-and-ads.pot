@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Google Listings and Ads plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Google Listings and Ads 2.2.1\n"
+"Project-Id-Version: Google Listings and Ads 2.3.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/google-listings-and-ads\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-11-15T11:05:30+00:00\n"
+"POT-Creation-Date: 2022-11-22T12:37:04+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: google-listings-and-ads\n"
@@ -24,7 +24,7 @@ msgid "Native integration with Google that allows merchants to easily display th
 msgstr ""
 
 #. Author of the plugin
-#: js/build/index.js:41
+#: js/build/index.js:44
 msgid "WooCommerce"
 msgstr ""
 
@@ -40,7 +40,7 @@ msgstr ""
 #: src/Admin/Admin.php:182
 #: src/Menu/Settings.php:25
 #: js/build/index.js:27
-#: js/build/index.js:41
+#: js/build/index.js:44
 msgid "Settings"
 msgstr ""
 
@@ -58,11 +58,15 @@ msgid "Default"
 msgstr ""
 
 #: src/Admin/Input/BooleanSelect.php:21
+#: src/Product/Attributes/Adult.php:82
+#: src/Product/Attributes/IsBundle.php:83
 #: js/build/index.js:13
 msgid "Yes"
 msgstr ""
 
 #: src/Admin/Input/BooleanSelect.php:22
+#: src/Product/Attributes/Adult.php:83
+#: src/Product/Attributes/IsBundle.php:84
 #: js/build/index.js:13
 msgid "No"
 msgstr ""
@@ -107,6 +111,7 @@ msgid "The date a preordered or backordered product becomes available for delive
 msgstr ""
 
 #: src/Admin/Product/Attributes/Input/BrandInput.php:25
+#: src/Product/Attributes/Brand.php:61
 msgid "Brand"
 msgstr ""
 
@@ -115,6 +120,7 @@ msgid "Brand of the product."
 msgstr ""
 
 #: src/Admin/Product/Attributes/Input/ColorInput.php:25
+#: src/Product/Attributes/Color.php:61
 msgid "Color"
 msgstr ""
 
@@ -123,6 +129,7 @@ msgid "Color of the product."
 msgstr ""
 
 #: src/Admin/Product/Attributes/Input/ConditionInput.php:25
+#: src/Product/Attributes/Condition.php:76
 msgid "Condition"
 msgstr ""
 
@@ -131,6 +138,7 @@ msgid "Condition or state of the item."
 msgstr ""
 
 #: src/Admin/Product/Attributes/Input/GenderInput.php:25
+#: src/Product/Attributes/Gender.php:76
 msgid "Gender"
 msgstr ""
 
@@ -155,6 +163,7 @@ msgid "Whether the item is a bundle of products. A bundle is a custom grouping o
 msgstr ""
 
 #: src/Admin/Product/Attributes/Input/MaterialInput.php:25
+#: src/Product/Attributes/Material.php:61
 msgid "Material"
 msgstr ""
 
@@ -171,6 +180,7 @@ msgid "This code uniquely identifies the product to its manufacturer."
 msgstr ""
 
 #: src/Admin/Product/Attributes/Input/MultipackInput.php:25
+#: src/Product/Attributes/Multipack.php:72
 msgid "Multipack"
 msgstr ""
 
@@ -179,6 +189,7 @@ msgid "The number of identical products in a multipack. Use this attribute to in
 msgstr ""
 
 #: src/Admin/Product/Attributes/Input/PatternInput.php:25
+#: src/Product/Attributes/Pattern.php:61
 msgid "Pattern"
 msgstr ""
 
@@ -187,6 +198,7 @@ msgid "The item's pattern (e.g. polka dots)."
 msgstr ""
 
 #: src/Admin/Product/Attributes/Input/SizeInput.php:25
+#: src/Product/Attributes/Size.php:61
 msgid "Size"
 msgstr ""
 
@@ -582,6 +594,42 @@ msgstr ""
 msgid "Successfully marked Ads setup as completed."
 msgstr ""
 
+#: src/API/Site/Controllers/AttributeMapping/AttributeMappingDataController.php:71
+msgid "The attribute key to get the sources."
+msgstr ""
+
+#: src/API/Site/Controllers/AttributeMapping/AttributeMappingDataController.php:125
+msgid "The list of attributes or attribute sources."
+msgstr ""
+
+#: src/API/Site/Controllers/AttributeMapping/AttributeMappingRulesController.php:207
+msgid "The Id for the rule."
+msgstr ""
+
+#: src/API/Site/Controllers/AttributeMapping/AttributeMappingRulesController.php:213
+msgid "The attribute value for the rule."
+msgstr ""
+
+#: src/API/Site/Controllers/AttributeMapping/AttributeMappingRulesController.php:220
+msgid "The source value for the rule."
+msgstr ""
+
+#: src/API/Site/Controllers/AttributeMapping/AttributeMappingRulesController.php:226
+msgid "The category condition type to apply for this rule."
+msgstr ""
+
+#: src/API/Site/Controllers/AttributeMapping/AttributeMappingRulesController.php:233
+msgid "List of category IDs, separated by commas."
+msgstr ""
+
+#: src/API/Site/Controllers/AttributeMapping/AttributeMappingSyncerController.php:89
+msgid "Indicates if the products are currently syncing"
+msgstr ""
+
+#: src/API/Site/Controllers/AttributeMapping/AttributeMappingSyncerController.php:96
+msgid "Timestamp with the last sync."
+msgstr ""
+
 #: src/API/Site/Controllers/BaseReportsController.php:45
 msgid "Limit response to data after a given ISO8601 compliant date."
 msgstr ""
@@ -670,6 +718,18 @@ msgstr ""
 
 #: src/API/Site/Controllers/MerchantCenter/AccountController.php:245
 msgid "The domain registered with the Merchant Center Account."
+msgstr ""
+
+#: src/API/Site/Controllers/MerchantCenter/AttributeMappingCategoriesController.php:80
+msgid "The Category ID."
+msgstr ""
+
+#: src/API/Site/Controllers/MerchantCenter/AttributeMappingCategoriesController.php:86
+msgid "The category name."
+msgstr ""
+
+#: src/API/Site/Controllers/MerchantCenter/AttributeMappingCategoriesController.php:92
+msgid "The category parent."
 msgstr ""
 
 #: src/API/Site/Controllers/MerchantCenter/ConnectionController.php:56
@@ -1067,7 +1127,7 @@ msgid "Your installation of Google Listings and Ads is incomplete. If you instal
 msgstr ""
 
 #: src/Coupon/CouponSyncer.php:471
-#: src/Product/ProductSyncer.php:361
+#: src/Product/ProductSyncer.php:360
 msgid "Google Merchant Center has not been set up correctly. Please review your configuration."
 msgstr ""
 
@@ -1116,6 +1176,18 @@ msgstr ""
 msgid "Unable to update Merchant Center account."
 msgstr ""
 
+#: src/Integration/YoastWooCommerceSeo.php:202
+msgid "- Yoast SEO -"
+msgstr ""
+
+#: src/Integration/YoastWooCommerceSeo.php:211
+msgid "GTIN Field"
+msgstr ""
+
+#: src/Integration/YoastWooCommerceSeo.php:220
+msgid "MPN Field"
+msgstr ""
+
 #: src/Internal/Requirements/GoogleProductFeedValidator.php:84
 msgid "The Google Product Feed plugin may cause conflicts or unexpected results."
 msgstr ""
@@ -1143,6 +1215,11 @@ msgstr ""
 msgid "The job named \"%s\" does not exist."
 msgstr ""
 
+#: src/Menu/AttributeMapping.php:25
+#: js/build/index.js:44
+msgid "Attribute Mapping"
+msgstr ""
+
 #: src/Menu/Dashboard.php:39
 #: src/Menu/Dashboard.php:56
 #: src/Menu/Dashboard.php:60
@@ -1152,26 +1229,26 @@ msgstr ""
 #: views/attributes/variations-form.php:22
 #: views/meta-box/channel_visibility.php:95
 #: views/meta-box/coupon_channel_visibility.php:160
-#: js/build/index.js:41
+#: js/build/index.js:44
 msgid "Google Listings & Ads"
 msgstr ""
 
 #: src/Menu/Dashboard.php:71
 #: js/build/index.js:27
-#: js/build/index.js:41
+#: js/build/index.js:44
 msgid "Dashboard"
 msgstr ""
 
 #: src/Menu/ProductFeed.php:25
 #: js/build/index.js:27
 #: js/build/index.js:37
-#: js/build/index.js:41
+#: js/build/index.js:44
 msgid "Product Feed"
 msgstr ""
 
 #: src/Menu/Reports.php:25
 #: js/build/index.js:27
-#: js/build/index.js:41
+#: js/build/index.js:44
 msgid "Reports"
 msgstr ""
 
@@ -1245,6 +1322,23 @@ msgstr ""
 
 #: src/Notes/AfterCampaignMigration.php:60
 msgid "Read more about this upgrade"
+msgstr ""
+
+#: src/Notes/AttributeMappingNewFeature.php:43
+msgid "Our latest improvement to the Google Listings & Ads extension: Custom Attribute Mapping"
+msgstr ""
+
+#: src/Notes/AttributeMappingNewFeature.php:45
+msgid "You spoke, we listened. This new feature enables you to easily upload your products, customize your product attributes in one place, and target shoppers with more relevant ads. Extend how far your ad dollars go with each campaign."
+msgstr ""
+
+#: src/Notes/AttributeMappingNewFeature.php:55
+#: src/Notes/SetupCampaign.php:81
+#: js/build/index.js:21
+#: js/build/index.js:22
+#: js/build/index.js:33
+#: js/build/index.js:41
+msgid "Learn more"
 msgstr ""
 
 #: src/Notes/BeforeCampaignMigration.php:47
@@ -1343,14 +1437,6 @@ msgstr ""
 msgid "Complete Setup"
 msgstr ""
 
-#: src/Notes/SetupCampaign.php:81
-#: js/build/index.js:21
-#: js/build/index.js:22
-#: js/build/index.js:33
-#: js/build/index.js:41
-msgid "Learn more"
-msgstr ""
-
 #: src/Notes/SetupCampaignTwoWeeks.php:48
 msgid "Reach more shoppers with paid listings on Google"
 msgstr ""
@@ -1379,116 +1465,194 @@ msgstr ""
 msgid "Go to coupons"
 msgstr ""
 
-#: src/Product/Attributes/AgeGroup.php:39
-msgid "Newborn"
+#: src/Product/AttributeMapping/Traits/IsFieldTrait.php:70
+msgid "- Global attributes -"
 msgstr ""
 
-#: src/Product/Attributes/AgeGroup.php:40
-msgid "Infant"
+#: src/Product/AttributeMapping/Traits/IsFieldTrait.php:80
+msgid "- Taxonomies -"
 msgstr ""
 
-#: src/Product/Attributes/AgeGroup.php:41
-msgid "Toddler"
+#: src/Product/AttributeMapping/Traits/IsFieldTrait.php:96
+msgid "Allow backorders setting"
 msgstr ""
 
-#: src/Product/Attributes/AgeGroup.php:42
-msgid "Kids"
+#: src/Product/AttributeMapping/Traits/IsFieldTrait.php:97
+#: js/build/index.js:33
+msgid "Product title"
 msgstr ""
 
-#: src/Product/Attributes/AgeGroup.php:43
+#: src/Product/AttributeMapping/Traits/IsFieldTrait.php:98
+msgid "SKU"
+msgstr ""
+
+#: src/Product/AttributeMapping/Traits/IsFieldTrait.php:99
+msgid "Stock Qty"
+msgstr ""
+
+#: src/Product/AttributeMapping/Traits/IsFieldTrait.php:100
+msgid "Stock Status"
+msgstr ""
+
+#: src/Product/AttributeMapping/Traits/IsFieldTrait.php:101
+msgid "Tax class"
+msgstr ""
+
+#: src/Product/AttributeMapping/Traits/IsFieldTrait.php:102
+msgid "Variation title"
+msgstr ""
+
+#: src/Product/AttributeMapping/Traits/IsFieldTrait.php:103
+msgid "Weight (raw value, no units)"
+msgstr ""
+
+#: src/Product/AttributeMapping/Traits/IsFieldTrait.php:104
+msgid "Weight (with units)"
+msgstr ""
+
+#: src/Product/AttributeMapping/Traits/IsFieldTrait.php:110
+msgid "- Product fields -"
+msgstr ""
+
+#: src/Product/AttributeMapping/Traits/IsFieldTrait.php:133
+msgid "- Custom Attributes -"
+msgstr ""
+
+#: src/Product/Attributes/Adult.php:72
+#: src/Product/Attributes/AgeGroup.php:46
 msgid "Adult"
 msgstr ""
 
-#: src/Product/Attributes/Condition.php:48
+#: src/Product/Attributes/AgeGroup.php:42
+msgid "Newborn"
+msgstr ""
+
+#: src/Product/Attributes/AgeGroup.php:43
+msgid "Infant"
+msgstr ""
+
+#: src/Product/Attributes/AgeGroup.php:44
+msgid "Toddler"
+msgstr ""
+
+#: src/Product/Attributes/AgeGroup.php:45
+msgid "Kids"
+msgstr ""
+
+#: src/Product/Attributes/AgeGroup.php:79
+msgid "Age group"
+msgstr ""
+
+#: src/Product/Attributes/Condition.php:51
 msgid "New"
 msgstr ""
 
-#: src/Product/Attributes/Condition.php:49
+#: src/Product/Attributes/Condition.php:52
 msgid "Refurbished"
 msgstr ""
 
-#: src/Product/Attributes/Condition.php:50
+#: src/Product/Attributes/Condition.php:53
 msgid "Used"
 msgstr ""
 
-#: src/Product/Attributes/Gender.php:39
+#: src/Product/Attributes/Gender.php:42
 msgid "Male"
 msgstr ""
 
-#: src/Product/Attributes/Gender.php:40
+#: src/Product/Attributes/Gender.php:43
 msgid "Female"
 msgstr ""
 
-#: src/Product/Attributes/Gender.php:41
+#: src/Product/Attributes/Gender.php:44
 msgid "Unisex"
 msgstr ""
 
-#: src/Product/Attributes/SizeSystem.php:48
-msgid "US"
+#: src/Product/Attributes/GTIN.php:61
+msgid "GTIN"
 msgstr ""
 
-#: src/Product/Attributes/SizeSystem.php:49
-msgid "EU"
+#: src/Product/Attributes/IsBundle.php:72
+msgid "Is Bundle"
 msgstr ""
 
-#: src/Product/Attributes/SizeSystem.php:50
-msgid "UK"
+#: src/Product/Attributes/MPN.php:61
+msgid "MPN"
 msgstr ""
 
 #: src/Product/Attributes/SizeSystem.php:51
-msgid "DE"
+msgid "US"
 msgstr ""
 
 #: src/Product/Attributes/SizeSystem.php:52
-msgid "FR"
+msgid "EU"
 msgstr ""
 
 #: src/Product/Attributes/SizeSystem.php:53
-msgid "IT"
+msgid "UK"
 msgstr ""
 
 #: src/Product/Attributes/SizeSystem.php:54
-msgid "AU"
+msgid "DE"
 msgstr ""
 
 #: src/Product/Attributes/SizeSystem.php:55
-msgid "BR"
+msgid "FR"
 msgstr ""
 
 #: src/Product/Attributes/SizeSystem.php:56
-msgid "CN"
+msgid "IT"
 msgstr ""
 
 #: src/Product/Attributes/SizeSystem.php:57
-msgid "JP"
+msgid "AU"
 msgstr ""
 
 #: src/Product/Attributes/SizeSystem.php:58
+msgid "BR"
+msgstr ""
+
+#: src/Product/Attributes/SizeSystem.php:59
+msgid "CN"
+msgstr ""
+
+#: src/Product/Attributes/SizeSystem.php:60
+msgid "JP"
+msgstr ""
+
+#: src/Product/Attributes/SizeSystem.php:61
 msgid "MEX"
 msgstr ""
 
-#: src/Product/Attributes/SizeType.php:49
-msgid "Regular"
-msgstr ""
-
-#: src/Product/Attributes/SizeType.php:50
-msgid "Petite"
-msgstr ""
-
-#: src/Product/Attributes/SizeType.php:51
-msgid "Plus"
+#: src/Product/Attributes/SizeSystem.php:84
+msgid "Size System"
 msgstr ""
 
 #: src/Product/Attributes/SizeType.php:52
-msgid "Tall"
+msgid "Regular"
 msgstr ""
 
 #: src/Product/Attributes/SizeType.php:53
-msgid "Big"
+msgid "Petite"
 msgstr ""
 
 #: src/Product/Attributes/SizeType.php:54
+msgid "Plus"
+msgstr ""
+
+#: src/Product/Attributes/SizeType.php:55
+msgid "Tall"
+msgstr ""
+
+#: src/Product/Attributes/SizeType.php:56
+msgid "Big"
+msgstr ""
+
+#: src/Product/Attributes/SizeType.php:57
 msgid "Maternity"
+msgstr ""
+
+#: src/Product/Attributes/SizeType.php:80
+msgid "Size Type"
 msgstr ""
 
 #. translators: %1 is the shipping rate, %2 is the currency (e.g. USD)
@@ -1950,6 +2114,18 @@ msgid "Unable to update the channel visibility of products. Please try again lat
 msgstr ""
 
 #: js/build/index.js:2
+msgid "There was an error creating the rule."
+msgstr ""
+
+#: js/build/index.js:2
+msgid "There was an error updating the rule."
+msgstr ""
+
+#: js/build/index.js:2
+msgid "There was an error deleting the rule."
+msgstr ""
+
+#: js/build/index.js:2
 msgid "There was an error loading Google account access info."
 msgstr ""
 
@@ -1987,6 +2163,22 @@ msgstr ""
 
 #: js/build/index.js:2
 msgid "There was an error loading report."
+msgstr ""
+
+#: js/build/index.js:2
+msgid "There was an error loading the mapping attributes."
+msgstr ""
+
+#: js/build/index.js:2
+msgid "There was an error loading the mapping sources for the selected attribute."
+msgstr ""
+
+#: js/build/index.js:2
+msgid "There was an error loading the mapping rules."
+msgstr ""
+
+#: js/build/index.js:2
+msgid "There was an error getting the store categories."
 msgstr ""
 
 #: js/build/index.js:2
@@ -2205,6 +2397,7 @@ msgstr ""
 
 #: js/build/index.js:9
 #: js/build/index.js:34
+#: js/build/index.js:44
 msgid "Cancel"
 msgstr ""
 
@@ -2355,6 +2548,7 @@ msgstr ""
 
 #. translators: %d: The number of extra tags to show
 #: js/build/index.js:11
+#: js/build/index.js:43
 msgid "All"
 msgstr ""
 
@@ -2438,6 +2632,7 @@ msgstr ""
 #: js/build/index.js:11
 #: js/build/index.js:13
 #: js/build/index.js:17
+#: js/build/index.js:44
 msgid "Delete"
 msgstr ""
 
@@ -2461,6 +2656,7 @@ msgstr ""
 #: js/build/index.js:21
 #: js/build/index.js:27
 #: js/build/index.js:33
+#: js/build/index.js:44
 msgid "Edit"
 msgstr ""
 
@@ -3292,6 +3488,10 @@ msgid "Your existing campaigns have been upgraded to Performance Max. <readMoreL
 msgstr ""
 
 #: js/build/index.js:27
+msgid "Attributes"
+msgstr ""
+
+#: js/build/index.js:27
 msgid "Pencil icon"
 msgstr ""
 
@@ -3720,10 +3920,6 @@ msgid "Select one or more products to compare"
 msgstr ""
 
 #: js/build/index.js:33
-msgid "Product title"
-msgstr ""
-
-#: js/build/index.js:33
 msgid "Type"
 msgstr ""
 
@@ -4141,14 +4337,188 @@ msgid "Your phone number is required by Google for verification purposes. It wil
 msgstr ""
 
 #: js/build/index.js:41
+msgid "Create attribute rules to control what product data gets sent to Google and to manage product attributes in bulk."
+msgstr ""
+
+#: js/build/index.js:41
+msgctxt "the separator for concatenating the categories where the Attribute mapping rule is applied."
+msgid ", "
+msgstr ""
+
+#. translators: %d: number of categories.
+#: js/build/index.js:42
+msgid "Category ID %s (deleted)"
+msgstr ""
+
+#. translators: %d: number of categories.
+#: js/build/index.js:43
+msgid "%d category"
+msgid_plural "%d categories"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: The number of categories.
+#: js/build/index.js:44
+msgid "+ %d more"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Only in"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "All except"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Select one option"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Set a fixed value."
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Use value from existing product field."
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Choose how to assign a value to the target attribute"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Create a connection between the target attribute and an existing product field to auto-populate the target attribute with with the value of the field it is linked to."
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Can’t find an appropriate field?. <link>Create a new attribute</link>"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Use fixed values to populate the target attribute with a value you specify. For example, you can enter a fixed value of White to specify a single color for all your products."
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Enter a value"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Apply to All categories"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Apply to All categories EXCEPT"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Apply ONLY to this categories"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Type for search"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Select default value"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Select a Google attribute that you want to manage"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Select one attribute"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Saving…"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Save rule"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Target attribute"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Assign value"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Categories"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Deleting…"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Delete attribute rule"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Deleting a rule does’t affect any data that has already been submitted to Google."
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Product data is re-submitted to Google every 30 days to ensure that the information in your product listings are up-to-date."
+msgstr ""
+
+#: js/build/index.js:44
+msgid "To ensure your products continue to be approved and promoted by Google, make sure that your product fields include all the required information."
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Scheduled for sync"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Never"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Last sync:"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "When an attribute rule is added or changed, data will be synced to Google Merchant Center via an async job. Note that it may take a while for the update to show up on Merchant Center, especially if it involves products that have not been synced and approved before."
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Target Attribute"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Data Source / Default Value"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Loading Attribute Mapping rules"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Attribute Mapping configuration"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Create attribute rule"
+msgstr ""
+
+#: js/build/index.js:44
+msgid "Manage attributes"
+msgstr ""
+
+#: js/build/index.js:44
 msgid "Marketing"
 msgstr ""
 
-#: js/build/index.js:41
+#: js/build/index.js:44
 msgid "Setup Merchant Center"
 msgstr ""
 
-#: js/build/index.js:41
+#: js/build/index.js:44
 msgid "Setup Google Ads"
 msgstr ""
 

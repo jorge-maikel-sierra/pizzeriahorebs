@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-release/2.2.1',
-        'version' => 'dev-release/2.2.1',
+        'pretty_version' => 'dev-release/2.3.1',
+        'version' => 'dev-release/2.3.1',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '2e1cd2a32fcefb7f171bc465a501dcdd75f47ccb',
+        'reference' => 'cca7a962b5ab064a21757555d813e03bbc8ddaff',
         'name' => 'woocommerce/google-listings-and-ads',
         'dev' => false,
     ),
@@ -146,13 +146,10 @@
             'dev_requirement' => false,
         ),
         'google/grpc-gcp' => array(
-            'pretty_version' => 'v0.2.0',
-            'version' => '0.2.0.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../google/grpc-gcp',
-            'aliases' => array(),
-            'reference' => '2465c2273e11ada1e95155aa1e209f3b8f03c314',
             'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
         ),
         'google/protobuf' => array(
             'pretty_version' => 'v3.21.2',
@@ -173,13 +170,10 @@
             'dev_requirement' => false,
         ),
         'grpc/grpc' => array(
-            'pretty_version' => '1.42.0',
-            'version' => '1.42.0.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../grpc/grpc',
-            'aliases' => array(),
-            'reference' => '9fa44f104cb92e924d4da547323a97f3d8aca6d4',
             'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
         ),
         'guzzlehttp/guzzle' => array(
             'pretty_version' => '7.4.5',
@@ -452,12 +446,12 @@
             'dev_requirement' => false,
         ),
         'woocommerce/google-listings-and-ads' => array(
-            'pretty_version' => 'dev-release/2.2.1',
-            'version' => 'dev-release/2.2.1',
+            'pretty_version' => 'dev-release/2.3.1',
+            'version' => 'dev-release/2.3.1',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '2e1cd2a32fcefb7f171bc465a501dcdd75f47ccb',
+            'reference' => 'cca7a962b5ab064a21757555d813e03bbc8ddaff',
             'dev_requirement' => false,
         ),
     ),

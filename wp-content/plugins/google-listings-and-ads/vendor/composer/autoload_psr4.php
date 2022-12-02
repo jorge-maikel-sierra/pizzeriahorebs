@@ -23,8 +23,6 @@ return array(
     'Psr\\Cache\\' => array($vendorDir . '/psr/cache/src'),
     'ParagonIE\\ConstantTime\\' => array($vendorDir . '/paragonie/constant_time_encoding/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
-    'Grpc\\Gcp\\' => array($vendorDir . '/google/grpc-gcp/src'),
-    'Grpc\\' => array($vendorDir . '/grpc/grpc/src/lib'),
     'Google\\Service\\' => array($vendorDir . '/google/apiclient-services/src'),
     'Google\\Protobuf\\' => array($vendorDir . '/google/protobuf/src/Google/Protobuf'),
     'Google\\ApiCore\\' => array($vendorDir . '/google/gax/src'),

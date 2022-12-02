@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) exit;
 use MailPoet\Config\AccessControl;
 use MailPoet\Exception;
 use MailPoet\Settings\SettingsController;
-use MailPoet\Subscription\Captcha;
+use MailPoet\Subscription\Captcha\CaptchaConstants;
 use MailPoet\Tracy\ApiPanel\ApiPanel;
 use MailPoet\Tracy\DIPanel\DIPanel;
 use MailPoet\Util\Helpers;
@@ -103,7 +103,7 @@ class API {
     }
 
     $ignoreToken = (
-      $this->settings->get('captcha.type') != Captcha::TYPE_DISABLED &&
+      $this->settings->get('captcha.type') != CaptchaConstants::TYPE_DISABLED &&
       $this->requestEndpoint === 'subscribers' &&
       $this->requestMethod === 'subscribe'
     );
