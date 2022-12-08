@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Google Listings and Ads plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Google Listings and Ads 2.3.1\n"
+"Project-Id-Version: Google Listings and Ads 2.3.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/google-listings-and-ads\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-11-22T12:37:04+00:00\n"
+"POT-Creation-Date: 2022-12-06T13:08:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: google-listings-and-ads\n"
@@ -1127,7 +1127,7 @@ msgid "Your installation of Google Listings and Ads is incomplete. If you instal
 msgstr ""
 
 #: src/Coupon/CouponSyncer.php:471
-#: src/Product/ProductSyncer.php:360
+#: src/Product/ProductSyncer.php:374
 msgid "Google Merchant Center has not been set up correctly. Please review your configuration."
 msgstr ""
 
@@ -1311,19 +1311,6 @@ msgstr ""
 msgid "Update this attribute in your product data"
 msgstr ""
 
-#: src/Notes/AfterCampaignMigration.php:47
-#: js/build/index.js:27
-msgid "Your Google Listings & Ads campaigns have been automatically upgraded"
-msgstr ""
-
-#: src/Notes/AfterCampaignMigration.php:49
-msgid "Google has auto-upgraded your existing campaigns from Smart Shopping to Performance Max, giving you the same benefits plus extended reach across the Google network. No changes were made to your campaign settings and metrics from previous campaigns will continue to be available in Reports for historical purposes."
-msgstr ""
-
-#: src/Notes/AfterCampaignMigration.php:60
-msgid "Read more about this upgrade"
-msgstr ""
-
 #: src/Notes/AttributeMappingNewFeature.php:43
 msgid "Our latest improvement to the Google Listings & Ads extension: Custom Attribute Mapping"
 msgstr ""
@@ -1339,21 +1326,6 @@ msgstr ""
 #: js/build/index.js:33
 #: js/build/index.js:41
 msgid "Learn more"
-msgstr ""
-
-#: src/Notes/BeforeCampaignMigration.php:47
-#: js/build/index.js:27
-msgid "Your Google Listings & Ads campaigns will soon be automatically upgraded"
-msgstr ""
-
-#: src/Notes/BeforeCampaignMigration.php:49
-#: js/build/index.js:27
-msgid "From July through September, Google will be upgrading your existing campaigns from Smart Shopping to Performance Max, giving you the same benefits, plus expanded reach. There will be no impact to your spend or campaign settings due to this upgrade."
-msgstr ""
-
-#: src/Notes/BeforeCampaignMigration.php:60
-#: js/build/index.js:27
-msgid "Learn more about this upgrade"
 msgstr ""
 
 #: src/Notes/CompleteSetup.php:40
@@ -1384,15 +1356,15 @@ msgstr ""
 msgid "Leave a review"
 msgstr ""
 
-#: src/Notes/ReconnectWordPress.php:56
+#: src/Notes/ReconnectWordPress.php:59
 msgid "Re-connect your store to Google Listings & Ads"
 msgstr ""
 
-#: src/Notes/ReconnectWordPress.php:59
+#: src/Notes/ReconnectWordPress.php:62
 msgid "Your WordPress.com account has been disconnected from Google Listings & Ads. Connect your WordPress.com account again to ensure your products stay listed on Google through the Google Listings & Ads extension.<br/><br/>If you do not re-connect, any existing listings may be removed from Google."
 msgstr ""
 
-#: src/Notes/ReconnectWordPress.php:67
+#: src/Notes/ReconnectWordPress.php:70
 msgid "Go to Google Listings & Ads"
 msgstr ""
 
@@ -3477,6 +3449,22 @@ msgstr ""
 
 #: js/build/index.js:27
 msgid "Note: The currency set in your Google Ads account is <adsCurrency />, which is different from your store currency, <storeCurrency />. <readMoreLink>Read more</readMoreLink>"
+msgstr ""
+
+#: js/build/index.js:27
+msgid "Your Google Listings & Ads campaigns will soon be automatically upgraded"
+msgstr ""
+
+#: js/build/index.js:27
+msgid "From July through September, Google will be upgrading your existing campaigns from Smart Shopping to Performance Max, giving you the same benefits, plus expanded reach. There will be no impact to your spend or campaign settings due to this upgrade."
+msgstr ""
+
+#: js/build/index.js:27
+msgid "Learn more about this upgrade"
+msgstr ""
+
+#: js/build/index.js:27
+msgid "Your Google Listings & Ads campaigns have been automatically upgraded"
 msgstr ""
 
 #: js/build/index.js:27
