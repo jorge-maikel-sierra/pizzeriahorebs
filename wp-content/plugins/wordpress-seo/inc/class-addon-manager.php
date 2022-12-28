@@ -117,7 +117,6 @@ class WPSEO_Addon_Manager {
 	 * @return stdClass The subscriptions.
 	 */
 	public function get_subscriptions() {
-		return;
 		return $this->get_site_information()->subscriptions;
 	}
 
@@ -163,7 +162,6 @@ class WPSEO_Addon_Manager {
 	 * @return stdClass|false Subscription data when found, false when not found.
 	 */
 	public function get_subscription( $slug ) {
-		return;
 		foreach ( $this->get_subscriptions() as $subscription ) {
 			if ( $subscription->product->slug === $slug ) {
 				return $subscription;
@@ -269,8 +267,6 @@ class WPSEO_Addon_Manager {
 	 * @return bool True when the subscription is valid.
 	 */
 	public function has_valid_subscription( $slug ) {
-		return true;
-
 		$subscription = $this->get_subscription( $slug );
 
 		// An non-existing subscription is never valid.
@@ -766,7 +762,6 @@ class WPSEO_Addon_Manager {
 	 * @return stdClass Mapped site information.
 	 */
 	protected function map_site_information( $site_information ) {
-		return;
 		return (object) [
 			'url'           => $site_information->url,
 			'subscriptions' => array_map( [ $this, 'map_subscription' ], $site_information->subscriptions ),
@@ -781,7 +776,6 @@ class WPSEO_Addon_Manager {
 	 * @return stdClass Mapped subscription.
 	 */
 	protected function map_subscription( $subscription ) {
-		return;
 		// phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- Not our properties.
 		return (object) [
 			'renewal_url' => $subscription->renewalUrl,
@@ -819,7 +813,6 @@ class WPSEO_Addon_Manager {
 	 * @return string The support section content.
 	 */
 	protected function get_support_section() {
-		return;
 		return '<h4>' . __( 'Need support?', 'wordpress-seo' ) . '</h4>'
 			. '<p>'
 			/* translators: 1: expands to <a> that refers to the help page, 2: </a> closing tag. */
